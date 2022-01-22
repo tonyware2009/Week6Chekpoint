@@ -22,7 +22,7 @@ export default {
     watchEffect(async () => {
       if (route.name == "Profile") {
         await profilesService.getProfile(route.params.id);
-        await postsService.getAllPosts("?creatorId" + route.params.id);
+        await postsService.getAllPosts("?creatorId=" + route.params.id);
       }
     });
     return {

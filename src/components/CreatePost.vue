@@ -1,21 +1,13 @@
 <template>
   <form @submit.prevent="createPost">
     <div class="row">
-      <div class="col-md-4">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="title..."
-          v-model="editable.title"
-          required
-        />
-      </div>
+      <div class="col-md-4"></div>
       <div class="col-md-4">
         <input
           type="text"
           class="form-control"
           placeholder="Cover Image..."
-          v-model="editable.coverImg"
+          v-model="editable.imgUrl"
           required
         />
       </div>
@@ -23,8 +15,8 @@
         <textarea
           type="text"
           class="form-control"
-          placeholder="Project Images..."
-          v-model="editable.post"
+          placeholder="body Decription..."
+          v-model="editable.body"
           aria-describedby="myPostId"
           required
         />
@@ -56,7 +48,7 @@ export default {
           Pop.toast("created post");
         } catch (error) {
           Pop.toast("error.message", "error");
-          logger.log("error");
+          logger.error(error);
         }
       },
     };

@@ -10,5 +10,11 @@ class PostsService {
     AppState.posts = res.data.posts
   }
 
+  async createPost(newPost) {
+
+    const res = await api.post('api/posts', newPost)
+    logger.log('create post res', res.data)
+    AppState.posts(res.data)
+  }
 }
 export const postsService = new PostsService()
