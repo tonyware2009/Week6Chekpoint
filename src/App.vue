@@ -4,6 +4,9 @@
   </header>
   <main>
     <router-view />
+    <div>
+      <Banner v-for="p in pics" :key="p.title" :pics="p" />
+    </div>
   </main>
   <footer>
     <div class="bg-dark text-light text-center p-4">Made by Tony Ware</div>

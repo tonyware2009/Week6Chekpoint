@@ -20,15 +20,13 @@
         <span
           ><i @click="removePost()" class="mdi mdi-trash-can selectable"></i
         ></span>
-        <div
-              class="d-flex justify-content-around"
-              v-if="posts.creatorId == account.id"
-            >
-              <i
-                class="mdi mdi-pencil selectable"
-                data-bs-toggle="modal"
-                data-bs-target="#edit-modal"
-              ></i>
+        <div class="d-flex justify-content-around">
+          <i
+            class="mdi mdi-pencil selectable"
+            data-bs-toggle="modal"
+            data-bs-target="#edit-modal"
+          ></i>
+        </div>
       </div>
     </div>
   </div>
