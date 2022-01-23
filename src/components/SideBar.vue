@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div class="col-md-3 d-flex bg-success" style="height: 80vh">
+    <div></div>
+  </div>
 </template>
 
 

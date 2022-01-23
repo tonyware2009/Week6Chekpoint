@@ -1,11 +1,12 @@
 <template>
   <div class="row">
-    <div v-if="profile.id == account.id">TODO create post</div>
+    <div v-if="profile.id == account.id">
+      <CreatePost />
+    </div>
   </div>
   <div class="row">
     <Post v-for="p in posts" :key="p.id" :post="p" />
   </div>
-  <div>profile page</div>
 </template>
 
 

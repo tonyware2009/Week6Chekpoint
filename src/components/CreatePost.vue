@@ -51,6 +51,16 @@ export default {
           logger.error(error);
         }
       },
+      async removePost() {
+        try {
+          const myposts = editable.value.posts;
+          editable.value.posts = myposts;
+          await postsService.removePost(props.post);
+        } catch (error) {
+          Pop.toast(error.message, "error");
+          logger.log(error.message);
+        }
+      },
     };
   },
 };
