@@ -14,13 +14,13 @@ class PostsService {
 
     const res = await api.post('api/posts', newPost)
     logger.log('create post res', res.data)
-    AppState.posts(res.data)
+    AppState.posts
   }
 
   async removePost(id) {
     const res = await api.delete('api/posts/' + id)
 
-    AppState.posts = AppState.posts.filter(p => p.id != post.id)
+    AppState.posts = AppState.posts.filter(p => p.id != id)
   }
 
   async editPost(id) {
