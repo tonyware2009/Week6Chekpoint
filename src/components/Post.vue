@@ -11,22 +11,18 @@
         <h5>{{ post.creator.name }}</h5>
         <p class="p-3">{{ post.body }}</p>
       </div>
-      <div class="">
-        <small><b>1 hours ago</b></small>
-        <span><i class="mdi mdi-thumb-up d-flex justify-content-end"></i></span>
-        <span
-          ><i class="mdi mdi-thumb-down d-flex justify-content-end"></i
-        ></span>
-        <span
-          ><i @click="removePost()" class="mdi mdi-trash-can selectable"></i
-        ></span>
-        <div class="d-flex justify-content-around">
-          <i
-            class="mdi mdi-pencil selectable"
-            data-bs-toggle="modal"
-            data-bs-target="#edit-modal"
-          ></i>
+      <div>
+        <div v-if="account.id == post.creator.id">
+          <span
+            >{{ post.likes.length
+            }}<i class="mdi mdi-thumb-up d-flex justify-content-end"></i
+          ></span>
+
+          <span
+            ><i @click="removePost()" class="mdi mdi-trash-can selectable"></i
+          ></span>
         </div>
+        <div class="d-flex justify-content-around"></div>
       </div>
     </div>
   </div>

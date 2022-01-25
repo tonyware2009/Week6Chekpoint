@@ -3,11 +3,21 @@
     <div v-if="profile.id == account.id">
       <CreatePost />
     </div>
+    <img :src="profile.coverImg" alt="" class="coverImg" />
+    <img :src="profile.picture" alt="" class="picture" />
+
+    <div>Bio:{{ profile.bio }}</div>
+    <div>CreatedAt: {{ profile.createdAt }}</div>
+    <div>GitHub Url:{{ profile.github }}</div>
+    <div>LinkedIn Url:{{ profile.linkedin }}</div>
+    <div>Class: {{ profile.class }}</div>
+    <div>Graduated:{{ profile.graduated }}</div>
   </div>
   <div class="row">
     <Post v-for="p in posts" :key="p.id" :post="p" />
   </div>
 </template>
+
 
 
 <script>
